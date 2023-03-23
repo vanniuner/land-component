@@ -11,7 +11,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum LandConfig {
 
-    MDF_TRACEID      (  0  , "requestID"   );
+    MDF_TRACEID      (  0  , "requestID"      ),
+    ACCESS_TOKEN     (  0  , "Access-Token"   );
 
     private int code;
     private String desc;

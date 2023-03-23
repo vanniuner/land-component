@@ -17,9 +17,7 @@ import feign.RequestTemplate;
  */
 @Configuration
 // @ConditionalOnProperty(prefix ="feign.token", value = "interceptor", havingValue = "true", matchIfMissing = true)
-public class FeignTokenInterceptor {
-
-    private static final String ACCESS_TOKEN = "Access-Token";
+public class LandFeignInterceptor {
 
     @Bean
     public RequestInterceptor requestTokenBearerInterceptor() {
@@ -31,9 +29,9 @@ public class FeignTokenInterceptor {
                 ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder
                         .currentRequestAttributes();
                 RequestContextHolder.setRequestAttributes(requestAttributes, true);//设置子线程共享
-                String token = requestAttributes.getRequest().getHeader(ACCESS_TOKEN);
+                String token = requestAttributes.getRequest().getHeader(LandConfig.ACCESS_TOKEN.getDesc());
                 if (StringUtils.isNotEmpty(token)) {
-                    requestTemplate.header(ACCESS_TOKEN, token);
+                    requestTemplate.header(LandConfig.ACCESS_TOKEN.getDesc(), token);
                 }
                 String reqId = MDC.get(LandConfig.MDF_TRACEID.getDesc());
                 if (StringUtils.isNotEmpty(reqId)) {
