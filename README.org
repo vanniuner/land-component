@@ -9,9 +9,25 @@
 #+LATEX_CLASS: elegantpaper
 #+latex:\newpage
 
-* land-base
-Log4j Mapped Diagnostic Context
-#+begin_src shell
-2023-03-23 14:38:09,960 INFO  - /healthCheck - b795c0ee-c904 - [http-nio-8080-exec-1] com.land.template.controller.DemoController.welcome
-2023-03-23 14:38:17,127 INFO  - /healthCheck - 93958b07-5d54 - [http-nio-8080-exec-2] com.land.template.controller.DemoController.welcome
-#+end_src
+* TODO land-base
++ Log4j Mapped Diagnostic Context
+    #+begin_src shell
+    2023-03-23 14:38:09,960 INFO  - requestId - b795c0ee-c904
+    2023-03-23 14:38:17,127 INFO  - requestId - 93958b07-5d54
+    #+end_src
++ Health checker
++ Fegion intercepter
++ Base Response Entity
++ Unified Error code
++ Golbal Exception handler
++ logback xml
++ startup script
++ dockerfile
+* TODO mybatis
+- Snowflake with redis
+    https://blog.csdn.net/qq_40674583/article/details/125942105
+- Base Entity
+- Page Helper
+* TODO redis
+- redisson integration
+* TODO sharding jdbc
